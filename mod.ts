@@ -62,6 +62,7 @@ async function handleRequest(request: Request): Promise<Response> {
 
 }
 
+
 addEventListener("fetch", async (event) => {
     event.respondWith(await handleRequest(event.request));
 });
