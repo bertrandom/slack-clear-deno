@@ -55,9 +55,6 @@ export async function verify(request: Request): Promise<void> {
         `${signatureVersion}:${requestTimestampSec}:${decoded}`,
     )
 
-    console.log(signatureHash);
-    console.log(calculatedHmac.hex());
-
     if (!secureCompare(signatureHash, calculatedHmac.hex())) {
         throw new Error(`${verifyErrorPrefix}: signature mismatch`)
     }
